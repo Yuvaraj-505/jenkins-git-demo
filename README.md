@@ -1,2 +1,4 @@
 # jenkins-git-demo
-Learning Git and Jenkins integration
+This repository is created to learning Git and Jenkins integration
+
+Author: Yuvaraj
