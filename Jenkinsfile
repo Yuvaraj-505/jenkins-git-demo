@@ -15,7 +15,7 @@ pipeline {
             }
 
             steps {
-                sh 'echo "Project: $PROJECT_NAME'
+                sh 'echo "Project: $PROJECT_NAME"'
                 sh 'echo "Owner: $OWNER"'
                 sh 'echo "Stage: $STAGE_NAME"'
             }
@@ -23,7 +23,7 @@ pipeline {
 
         stage('Current Directory') {
             steps {
-                sh 'echo "Project: $PROJECT_NAME'
+                sh 'echo "Project: $PROJECT_NAME"'
                 sh 'echo "Owner: $OWNER"'
                 sh 'echo "Stage: $STAGE_NAME"'
                 sh 'pwd'
