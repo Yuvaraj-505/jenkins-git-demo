@@ -10,8 +10,8 @@ pipeline {
 
         stahe('Environment Demo') {
             steps {
-                sh 'echo "Project: $PROJECT_NAME'
-                sh 'echo "Owner: $OWNER'
+                sh 'echo "Project: $PROJECT_NAME"'
+                sh 'echo "Owner: $OWNER"'
             }
         }
 
