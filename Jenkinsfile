@@ -9,14 +9,23 @@ pipeline {
     stages {
 
         stage('Environment Demo') {
+
+            environment {
+                STAGE_NAME = "Environment Demo Stage"
+            }
+
             steps {
-                sh 'echo "Project: $PROJECT_NAME"'
+                sh 'echo "Project: $PROJECT_NAME'
                 sh 'echo "Owner: $OWNER"'
+                sh 'echo "Stage: $STAGE_NAME"'
             }
         }
 
         stage('Current Directory') {
             steps {
+                sh 'echo "Project: $PROJECT_NAME'
+                sh 'echo "Owner: $OWNER"'
+                sh 'echo "Stage: $STAGE_NAME"'
                 sh 'pwd'
             }
         }
