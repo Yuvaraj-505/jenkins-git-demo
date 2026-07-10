@@ -8,7 +8,7 @@ pipeline {
 
     stages {
 
-        stahe('Environment Demo') {
+        stage('Environment Demo') {
             steps {
                 sh 'echo "Project: $PROJECT_NAME"'
                 sh 'echo "Owner: $OWNER"'
