@@ -1,7 +1,19 @@
 pipeline {
     agent any
 
+    environment {
+        PROJECT_NAME = "jenkins-git-demo"
+        OWNER = "Dhaxina"
+    }
+
     stages {
+
+        stahe('Environment Demo') {
+            steps {
+                sh 'echo "Project: $PROJECT_NAME'
+                sh 'echo "Owner: $OWNER'
+            }
+        }
 
         stage('Current Directory') {
             steps {
