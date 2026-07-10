@@ -2,7 +2,4 @@
 This repository is created to learning Git and Jenkins integration
 
 ===Start===
-
-Local change at 6th line
-
-Github change at 7th line
+Local change on 5th line
