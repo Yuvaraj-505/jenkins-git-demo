@@ -3,8 +3,3 @@ This repository is created to learning Git and Jenkins integration
 
 ===Start===
 
-6th line
-
-7th line
-
-10th line
