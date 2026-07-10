@@ -3,4 +3,7 @@ This repository is created to learning Git and Jenkins integration
 
 ===Start===
 
-Removed the conflict lines
+
+
+
+
