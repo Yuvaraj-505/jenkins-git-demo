@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh 'echo "Project: $PROJECT_NAME"'
                 sh 'echo "Owner: $OWNER"'
-                sh 'echo "Stage: $MY_STAGE_NAME"'
+                sh 'echo "My Stage: $MY_STAGE_NAME"'
             }
         }
 
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh 'echo "Project: $PROJECT_NAME"'
                 sh 'echo "Owner: $OWNER"'
-                sh 'echo "By predifine Stage name: $STAGE_NAME"'
+                sh 'echo "My Stage: $MY_STAGE_NAME"'
                 sh 'pwd'
             }
         }
