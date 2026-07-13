@@ -1,6 +1,14 @@
 pipeline {
     agent any
 
+    parameters {
+        string(
+            name: 'USER_NAME',
+            defaultValue: 'Dhaxina',
+            description: 'Enter your name'
+        )
+    }
+
     environment {
         PROJECT_NAME = "jenkins-git-demo"
         OWNER = "Dhaxina"
@@ -8,24 +16,23 @@ pipeline {
 
     stages {
 
-        stage('Environment Demo') {
-
-            environment {
-                MY_STAGE_NAME = "Environment Demo Stage"
+        stage('Parameter Demo') {
+            steps {
+                echo "Hello ${params.USER_NAME}"
+                sh 'echo "Hello from Shell: $USER_NAME"'
             }
+        }
+
+        stage('Environment Demo') {
 
             steps {
                 sh 'echo "Project: $PROJECT_NAME"'
                 sh 'echo "Owner: $OWNER"'
-                sh 'echo "My Stage: $MY_STAGE_NAME"'
             }
         }
 
         stage('Current Directory') {
             steps {
-                sh 'echo "Project: $PROJECT_NAME"'
-                sh 'echo "Owner: $OWNER"'
-                sh 'echo "My Stage: $MY_STAGE_NAME"'
                 sh 'pwd'
             }
         }
