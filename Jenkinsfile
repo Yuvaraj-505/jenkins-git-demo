@@ -7,6 +7,12 @@ pipeline {
             defaultValue: 'Dhaxina',
             description: 'Enter your name'
         )
+
+        choice(
+            name: 'ENVIRONMENT',
+            choices: ['Development', 'Testing', 'Staging', 'Production'],
+            description: 'Select deployment environment'
+        )
     }
 
     environment {
@@ -16,13 +22,6 @@ pipeline {
 
     stages {
 
-        stage('Parameter Demo') {
-            steps {
-                echo "Hello ${params.USER_NAME}"
-                sh 'echo "Hello from Shell: $USER_NAME"'
-            }
-        }
-
         stage('Environment Demo') {
 
             steps {
@@ -30,6 +29,19 @@ pipeline {
                 sh 'echo "Owner: $OWNER"'
             }
         }
+
+        stage('String Parameter Demo') {
+            steps {
+                echo "Hello ${params.USER_NAME}"
+                sh 'echo "Hello from Shell: $USER_NAME"'
+            }
+        }
+
+        stage('Choice Parameter Demo') {
+            steps {
+                echo "Selected: ${params.ENVIRONMENT}"
+                sh 'echo "Shell Value: $ENVIRONMENT"'
+            }
 
         stage('Current Directory') {
             steps {
