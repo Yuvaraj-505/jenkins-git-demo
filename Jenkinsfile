@@ -42,6 +42,7 @@ pipeline {
                 echo "Selected: ${params.ENVIRONMENT}"
                 sh 'echo "Shell Value: $ENVIRONMENT"'
             }
+        }
 
         stage('Current Directory') {
             steps {
