@@ -19,6 +19,12 @@ pipeline {
             defaultValue: true,
             description: 'Run Unit Tests'
         )
+
+        password(
+            name: 'DB_PASSWORD',
+            defaultValue: '',
+            description: 'Enter database password'
+        )
     }
 
     environment {
@@ -65,6 +71,15 @@ pipeline {
 
             steps {
                 sh 'echo "Executing Unit Tests..."'
+            }
+        }
+
+        stage('Connect Database') {
+            steps {
+                sh '''
+                    echo "Connecting to database..."
+                    # Use the password here
+                '''
             }
         }
 
