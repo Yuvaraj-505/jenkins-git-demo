@@ -13,6 +13,12 @@ pipeline {
             choices: ['Development', 'Testing', 'Staging', 'Production'],
             description: 'Select deployment environment'
         )
+
+        booleanParam(
+            name: 'RUN_TESTS',
+            defaultValue: true,
+            description: 'Run Unit Tests'
+        )
     }
 
     environment {
@@ -44,11 +50,31 @@ pipeline {
             }
         }
 
+        stage('Boolean Parameter Demo') {
+            steps {
+                echo "Run Tests = ${params.RUN_TESTS}"
+            }
+        }
+
+        stage('Run Tests') {
+            when {
+                expression {
+                    return params.RUN_TESTS
+                }
+            }
+
+            steps {
+                sh 'echo "Executing Unit Tests..."'
+            }
+        }
+
         stage('Current Directory') {
             steps {
                 sh 'pwd'
             }
         }
+
+        
 
         stage('List all files') {
             steps {
