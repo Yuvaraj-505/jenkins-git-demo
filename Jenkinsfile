@@ -34,6 +34,28 @@ pipeline {
 
     stages {
 
+        stage('Credentials Demo') {
+            steps {
+
+            withCredentials([
+            string(
+                credentialsId: 'demo-token',
+                variable: 'TOKEN'
+            )
+            ]) {
+
+                sh '''
+                echo "Credential loaded successfully."
+                echo "Length of token:"
+                echo ${#TOKEN}
+                '''
+                sh 'echo $TOKEN'
+                echo "$TOKEN"
+
+                }
+            }
+        }
+
         stage('Environment Demo') {
 
             steps {
