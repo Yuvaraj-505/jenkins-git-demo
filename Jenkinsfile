@@ -104,6 +104,12 @@ pipeline {
             }
         }
 
+        stage('Fail Demo') {
+            steps {
+            sh 'exit 1'
+            }
+        }
+
         stage('Current Directory') {
             steps {
                 sh 'pwd'
