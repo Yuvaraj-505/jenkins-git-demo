@@ -124,4 +124,22 @@ pipeline {
             }
         }
     }
+
+    post {
+
+        success {
+            echo "Build completed successfully!"
+        }
+
+        failure {
+            echo "Build failed!"
+        }
+
+        always {
+            echo "Post block execution completed."
+        }
+
+    }
+
+
 }
