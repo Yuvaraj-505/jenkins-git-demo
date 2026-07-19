@@ -129,6 +129,19 @@ pipeline {
                 sh 'cat README.md'
             }
         }
+
+        stage('Build') {
+            steps {
+                sh 'echo "Build Successful" > build.txt'
+                sh 'cat build.txt'
+            }
+        }
+
+        stage('Archive Artifact') {
+            steps {
+                archiveArtifacts artifacts: 'build.txt'
+            }
+        }
     }
 
     post {
