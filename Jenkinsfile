@@ -50,7 +50,6 @@ pipeline {
                 echo ${#TOKEN}
                 '''
                 sh 'echo $TOKEN'
-                echo "$TOKEN"
 
                 }
             }
