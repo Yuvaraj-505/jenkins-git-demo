@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven-3.9'
+    }
+
     parameters {
         string(
             name: 'USER_NAME',
@@ -33,6 +37,12 @@ pipeline {
     }
 
     stages {
+
+        stage('Verify Maven') {
+            steps {
+            sh 'mvn -version'
+            }
+        }
 
         stage('Credentials Demo') {
             steps {
@@ -137,11 +147,11 @@ pipeline {
             }
         }
 
-        stage('Archive Artifact') {
-            steps {
-                archiveArtifacts artifacts: 'build.txt'
-            }
-        }
+        // stage('Archive Artifact') {
+        //     steps {
+        //         archiveArtifacts artifacts: 'build.txt'
+        //     }
+        // }
     }
 
     post {
